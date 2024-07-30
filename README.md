@@ -27,17 +27,13 @@ http://localhost:8080/api/process?id=1&Q=3
 
 Pasos para ejecutar la aplicacion
 
-```
+```bash
 # Clona el repositorio
 git clone https://github.com/emerson14/bartender.git
 
-
-```
-# instalar las depencias del proyecto y generar el jar .
+# Instalar las depencias del proyecto y generar el jar.
 mvm clean install
- 
 
-```
 # Crear imagen de la aplicacion y ejecutar en un contenedor.
  docker-compose up --build
 
