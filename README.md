@@ -19,3 +19,10 @@ en las pruebas se realiza en el puerto 8080 utilizando peticion http get en post
 
 
 ![alt text](image.png)
+
+API probar
+http://localhost:8080/api/process?id=1&Q=3
+
+
+Run code spring
+./mvnw spring-boot:run
