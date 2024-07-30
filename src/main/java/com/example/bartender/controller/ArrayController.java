@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bartender.service.ArrayService;
-//controllador
+
 @RestController
 @RequestMapping("/api")
 public class ArrayController {
@@ -20,7 +20,6 @@ public class ArrayController {
 
     @GetMapping("/process")
     public ResponseEntity<List<Integer>> process(@RequestParam int id, @RequestParam int Q) {
-        //  correr el processArray en la clase arrayService
         List<Integer> result = arrayService.processArray(id, Q);
         return ResponseEntity.ok(result);
     }
