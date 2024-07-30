@@ -34,12 +34,10 @@ git clone https://github.com/emerson14/bartender.git
 
 ```
 # instalar las depencias del proyecto y generar el jar .
-
 mvm clean install
  
 
 ```
 # Crear imagen de la aplicacion y ejecutar en un contenedor.
-
  docker-compose up --build
 
