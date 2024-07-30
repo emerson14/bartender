@@ -13,9 +13,9 @@ la siguiente iteración, haz lo mismo con los valores del arreglo Ai. Una vez co
 número necesario de iteraciones Q, almacene los valores restantes de Ai, al final de Respuesta.
 
 
-En la base de datos para la prueba se utiliza workbrench como gestor de mysql y se almacena la informacion recibida.
+En la base de datos para la prueba se utiliza h2 un motor de base de datos en tiempo de ejecucion.
 
-en las pruebas se realiza en el puerto 8080 utilizando peticion http get en postman para verificar el funcionamiento del sistema 
+en las pruebas se realiza en el puerto 8080 utilizando una  peticion http de tipo get en postman para verificar el funcionamiento del sistema 
 
 
 ![alt text](image.png)
@@ -24,5 +24,22 @@ API probar
 http://localhost:8080/api/process?id=1&Q=3
 
 
-Run code spring
-./mvnw spring-boot:run
+
+Pasos para ejecutar la aplicacion
+
+```
+# Clona el repositorio
+git clone https://github.com/emerson14/bartender.git
+
+
+```
+# instalar las depencias del proyecto y generar el jar .
+
+mvm clean install
+ 
+
+```
+# Crear imagen de la aplicacion y ejecutar en un contenedor.
+
+ docker-compose up --build
+
