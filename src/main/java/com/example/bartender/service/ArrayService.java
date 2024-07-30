@@ -16,6 +16,7 @@ public class ArrayService {
 
     @Autowired
     private ArrayRepository arrayRepository;
+    // Método para generar una lista de números primos
 
     private List<Integer> generatePrimes(int n) {
         List<Integer> primes = new ArrayList<>();
@@ -35,15 +36,20 @@ public class ArrayService {
         }
         return primes;
     }
+    // Método principal para procesar el arreglo
 
     public List<Integer> processArray(int id, int Q) {
+        //  Obtener el arreglo desde la bd
         ArrayEntity arrayEntity = arrayRepository.findById(id).orElseThrow(() -> new RuntimeException("Array not found"));
         List<Integer> A = Arrays.stream(arrayEntity.getInputArray().split(","))
                                 .map(Integer::parseInt)
                                 .collect(Collectors.toList());
-        
+        // Generar una lista de números primos para el número de iteraciones Q
+
         List<Integer> primes = generatePrimes(Q);
         List<Integer> respuesta = new ArrayList<>();
+
+    //  arreglo para cada número primo en la lista de primos..
 
         for (int i = 0; i < Q; i++) {
             int Pi = primes.get(i);
@@ -61,7 +67,7 @@ public class ArrayService {
             respuesta.addAll(B);
             A = Ai;
         }
-
+        // almacenar los valores restantes de Ai
         respuesta.addAll(A);
         return respuesta;
     }
